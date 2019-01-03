@@ -1,12 +1,12 @@
 {
-  "name": "InstazApp",
-  "version": "1.0.0",
+  "name": "InstagApp",
+  "version": "2.0.0",
   "description": "A minimal Instagram client ",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-linux64": "electron-packager . WazApp --overwrite --asar --platform=linux --arch=x64 --icon=app/icons/icon.png --prune=true ",
-    "build-linux32": "electron-packager . WazApp --overwrite --asar --platform=linux --arch=ia32 --icon=app/icons/icon.png --prune=true ",
+    "build-linux64": "electron-packager . instagram --overwrite --asar --platform=linux --arch=x64 --icon=app/icons/icon.png --prune=true ",
+    "build-linux32": "electron-packager . instagram --overwrite --asar --platform=linux --arch=ia32 --icon=app/icons/icon.png --prune=true ",
     "package-linux": "electron-packager .  electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=app/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "repository": "https://github.com/miccar/instazapp/",
@@ -19,7 +19,7 @@
   "author": "miccar",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.8.4",
+  "electron": "^3.0.7",
     "auto-launch": "^5.0.1",
     "node-notifier": "^5.1.2"
   },

@@ -8,6 +8,22 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 const {Menu, Tray} = require('electron')
+const gotTheLock = app.requestSingleInstanceLock()
+
+app.on('second-instance', (commandLine, workingDirectory) => {
+  // Someone tried to run a second instance, we should focus our window.
+   if (mainWindow.window) {
+                if (mainWindow.window.isMinimized()) {
+                    mainWindow.window.restore();
+                }
+                mainWindow.window.show();
+            }
+})
+
+if (!gotTheLock) {
+  return app.quit()
+}
+/*
 const isRunning = app.makeSingleInstance(() => {
             if (mainWindow.window) {
                 if (mainWindow.window.isMinimized()) {
@@ -15,7 +31,7 @@ const isRunning = app.makeSingleInstance(() => {
                 }
                 mainWindow.window.show();
             }
-  });
+  });*/
 
 
 //panel icon
@@ -49,9 +65,6 @@ let tray = null
 })
 
 
-if (isRunning) {
-    app.quit();
-}
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -63,10 +76,10 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    title: "WazApp",
-    autoHideMenuBar: false,
+    title: "InstazApp",
+    autoHideMenuBar: true,
     icon: path.join(__dirname, 'app/icons/icon.png'),
-    show:false
+    show:true
   })
 
 
