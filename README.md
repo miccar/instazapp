@@ -1,4 +1,4 @@
-# instaApp
+# instazApp
 Build your linux  client for Instagram. 
 
 **It is not an official application **
