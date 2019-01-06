@@ -3,7 +3,7 @@ Build your linux  client for Instagram.
 
 **It is not an official application **
 
-This is created with [Electron](https://electronjs.org/) 
+This is created with [Electron](https://electronjs.org/) v3
 
 
 
